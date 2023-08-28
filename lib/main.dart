@@ -28,12 +28,42 @@
 
 //////////////////////////////////////////////////Task2////////////////////////////////////////////////////////
 
-import 'package:flutter/material.dart';
-import 'Task2/Screens/Screen1.dart';
-import 'Task2/Screens/Screen2.dart';
+// import 'package:flutter/material.dart';
+// import 'Task2/Screens/Screen1.dart';
+// import 'Task2/Screens/Screen2.dart';
 
-//if you want to run the first screen uncomment the home: FirstScreen(), and comment the home: SecondScreen(),
-//this is for the task of the session 2
+// //if you want to run the first screen uncomment the home: FirstScreen(), and comment the home: SecondScreen(),
+// //this is for the task of the session 2
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: "MyApp",
+//       theme: ThemeData(
+//         useMaterial3: true
+//       ),
+//       // home: FirstScreen(),
+//       home: SecondScreen(),
+
+//     );
+//   }
+// }
+
+//////////////////////////////////////////////////Task3////////////////////////////////////////////////////////
+
+import 'package:flutter/material.dart';
+import 'package:flutter_app_1/Task3/Screens/ForgotPasswordScreen.dart';
+import 'package:flutter_app_1/Task3/Screens/HomeScreen.dart';
+import 'package:flutter_app_1/Task3/Screens/LoginScreen.dart';
+import 'Task3/Screens/Registration.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -49,9 +79,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true
       ),
-      // home: FirstScreen(),
-      home: SecondScreen(),
-
+      routes: {
+        '/': (context) => RegistrationScreen(),
+        '/login': (context) => LoginScreen(),
+        '/forgotPassword': (context) => ForgotPasswordScreen(),
+        '/home': (context) => const HomeScreen(),
+      }
     );
   }
 }
