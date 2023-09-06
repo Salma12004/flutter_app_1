@@ -58,11 +58,47 @@
 
 //////////////////////////////////////////////////Task3////////////////////////////////////////////////////////
 
+// import 'package:flutter/material.dart';
+// import 'package:flutter_app_1/Task3/Screens/ForgotPasswordScreen.dart';
+// import 'package:flutter_app_1/Task3/Screens/HomeScreen.dart';
+// import 'package:flutter_app_1/Task3/Screens/LoginScreen.dart';
+// import 'Task3/Screens/Registration.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: "MyApp",
+//       theme: ThemeData(
+//         useMaterial3: true
+//       ),
+//       routes: {
+//         '/': (context) => RegistrationScreen(),
+//         '/login': (context) => LoginScreen(),
+//         '/forgotPassword': (context) => ForgotPasswordScreen(),
+//         '/home': (context) => const HomeScreen(),
+//       }
+//     );
+//   }
+// }
+
+
+//////////////////////////////////////////////////Task4////////////////////////////////////////////////////////
+
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_app_1/Task3/Screens/ForgotPasswordScreen.dart';
-import 'package:flutter_app_1/Task3/Screens/HomeScreen.dart';
-import 'package:flutter_app_1/Task3/Screens/LoginScreen.dart';
-import 'Task3/Screens/Registration.dart';
+import 'package:flutter_app_1/Task4/Screens/HomeScreen.dart';
+import 'package:provider/provider.dart';
+import 'Task4/Providers/ToDoProvider.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -73,18 +109,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "MyApp",
-      theme: ThemeData(
-        useMaterial3: true
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ToDoProvider()),
+      ],
+      child: Consumer<ToDoProvider>(
+        builder: (context, provider, child) => const MaterialApp(
+          home:HomeScreen(),
+          debugShowCheckedModeBanner: false,
+        ),
       ),
-      routes: {
-        '/': (context) => RegistrationScreen(),
-        '/login': (context) => LoginScreen(),
-        '/forgotPassword': (context) => ForgotPasswordScreen(),
-        '/home': (context) => const HomeScreen(),
-      }
     );
   }
 }
+
+
+//////////////////////////////////////////////////Task5////////////////////////////////////////////////////////
