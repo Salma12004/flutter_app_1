@@ -93,11 +93,40 @@
 //////////////////////////////////////////////////Task4////////////////////////////////////////////////////////
 
 
+// import 'package:flutter/material.dart';
+// import 'package:flutter_app_1/Task4/Screens/HomeScreen.dart';
+// import 'package:provider/provider.dart';
+// import 'Task4/Providers/ToDoProvider.dart';
+
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MultiProvider(
+//       providers: [
+//         ChangeNotifierProvider(create: (context) => ToDoProvider()),
+//       ],
+//       child: Consumer<ToDoProvider>(
+//         builder: (context, provider, child) => const MaterialApp(
+//           home:HomeScreen(),
+//           debugShowCheckedModeBanner: false,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+//////////////////////////////////////////////////Task5////////////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app_1/Task4/Screens/HomeScreen.dart';
-import 'package:provider/provider.dart';
-import 'Task4/Providers/ToDoProvider.dart';
+import 'Task5/Screens/HomeScreen.dart';
 
 
 void main() {
@@ -109,19 +138,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => ToDoProvider()),
-      ],
-      child: Consumer<ToDoProvider>(
-        builder: (context, provider, child) => const MaterialApp(
-          home:HomeScreen(),
-          debugShowCheckedModeBanner: false,
-        ),
-      ),
+    return const MaterialApp(
+      home:HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-
-
-//////////////////////////////////////////////////Task5////////////////////////////////////////////////////////
